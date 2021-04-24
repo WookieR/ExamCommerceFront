@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Precio Unitario</th>
+            <th scope="col">Proveedor</th>
+            <th><button class="btn btn-success" [routerLink]="['nuevo']">Nuevo Producto</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.codigo}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.marca}}</td>
+            <td>{{producto.precioUnitario}}</td>
+            <td>{{producto.proveedor}}</td>
+            <th><button class="btn btn-primary">Ver detalles</button></th>
+        </tr>
+    </tbody>
+</table>

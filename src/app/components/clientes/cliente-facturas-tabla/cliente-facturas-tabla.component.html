@@ -1,0 +1,18 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Numero de Factura</th>
+            <th scope="col">Legajo del empleado</th>
+            <th scope="col">Total</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let factura of facturas">
+            <td>{{factura.numeroFactura}}</td>
+            <td>{{factura.empleado.legajo}}</td>
+            <td>${{factura.total}}</td>
+            <td><a class="btn btn-primary" [routerLink]="'/main/facturas/' + factura._id">Ver Detalles</a></td>
+        </tr>
+    </tbody>
+</table>

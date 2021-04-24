@@ -1,0 +1,33 @@
+<h1 class="display-5">Nuevo Empleado</h1>
+
+<div class="card col">
+  <div class="card-body">
+    <form [formGroup]="empleadoForm" (ngSubmit)="crearEmpleado()" autocomplete="off">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Legajo</label>
+        <input type="text" class="form-control" formControlName="legajo" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Apellido</label>
+        <input type="text" class="form-control" formControlName="apellido" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" formControlName="fechaNacimiento" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">DNI</label>
+        <input type="text" class="form-control" formControlName="dni" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Edad</label>
+        <input type="number" class="form-control" formControlName="edad" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

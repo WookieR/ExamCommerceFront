@@ -1,0 +1,35 @@
+<h1 class="display-5">Nuevo Producto</h1>
+
+<div class="card col">
+  <div class="card-body">
+    <form [formGroup]="productoForm" (ngSubmit)="crearProducto()" autocomplete="off">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Codigo</label>
+        <input type="text" class="form-control" formControlName="codigo" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Marca</label>
+        <input type="text" class="form-control" formControlName="marca" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Fecha de Vencimiento</label>
+        <input type="date" class="form-control" formControlName="fechaVencimiento" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Precio Unitario</label>
+        <input type="number" class="form-control" formControlName="precioUnitario" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Proveedor</label>
+        <input type="text" class="form-control" formControlName="proveedor" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+

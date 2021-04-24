@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col">
+
+        <div class="card col" *ngIf="factura && detalles">
+            <div class="card-body">
+              <h4 class="card-title">Numero de factura: {{factura.numeroFactura}} | Fecha: {{factura.fecha | date:'short'}}</h4>
+              <hr/>
+              <div class="row">
+                <div class="col-6">
+                    <h5 class="card-title">Datos del Cliente</h5>
+                    <p class="card-text"><strong>Numero de tarjeta: </strong>{{factura.cliente.tarjetaCredito}}</p>
+                    <p class="card-text"><strong>DNI: </strong>{{factura.cliente.dni}}</p>
+                    <p class="card-text"><strong>Nombre y Apellido: </strong>{{factura.cliente.nombre}} {{factura.cliente.apellido}}</p>
+                </div>
+                <div class="col-6">
+                    <h5 class="card-title">Datos del Empleado</h5>
+                    <p class="card-text"><strong>Legajo: </strong>{{factura.empleado.legajo}}</p>
+                    <p class="card-text"><strong>DNI: </strong>{{factura.empleado.dni}}</p>
+                    <p class="card-text"><strong>Nombre y Apellido: </strong>{{factura.empleado.nombre}} {{factura.empleado.apellido}}</p>
+                </div>
+                
+                <hr class="mt-3"/>
+                <div class="row">
+                    <div class="col">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let detalle of detalles">
+                                    <td>{{detalle.nombreProducto}}</td>
+                                    <td>{{detalle.precioUnitario}}</td>
+                                    <td>{{detalle.cantidad}}</td>
+                                    <td>{{detalle.subtotal}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><strong>Total = {{factura.total}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Legajo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Dni</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th><button class="btn btn-success" [routerLink]="['nuevo']">Nuevo Empleado</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of empleados">
+        <td>{{empleado.legajo}}</td>
+        <td>{{empleado.nombre}}</td>
+        <td>{{empleado.apellido}}</td>
+        <td>{{empleado.dni}}</td>
+        <td>{{empleado.fechaDeNacimiento | date:'shortDate'}}</td>
+        <td><button class="btn btn-primary">Ver Empleado</button></td>
+      </tr>
+    </tbody>
+  </table>

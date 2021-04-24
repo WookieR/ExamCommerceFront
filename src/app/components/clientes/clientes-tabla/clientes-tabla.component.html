@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Tarjeta</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Dni</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th><button class="btn btn-success" [routerLink]="['nuevo']">Nuevo Cliente</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes">
+            <td>{{cliente.tarjetaCredito}}</td>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.apellido}}</td>
+            <td>{{cliente.dni}}</td>
+            <td>{{cliente.fechaDeNacimiento | date:'shortDate'}}</td>
+            <td><a class="btn btn-primary" [routerLink]="['facturas', cliente._id]">Ver facturas</a></td>
+        </tr>
+    </tbody>
+</table>

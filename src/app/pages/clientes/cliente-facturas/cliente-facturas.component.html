@@ -1,0 +1,3 @@
+<h1 class="display-5">Facturas del Cliente: <small *ngIf="cliente">{{cliente.nombre}} {{cliente.apellido}}</small></h1>
+
+<app-cliente-facturas-tabla [facturas]="facturas"></app-cliente-facturas-tabla>
