@@ -13,7 +13,7 @@ export class ClientesService {
   constructor(private http: HttpClient) { }
 
   getClientes(): Observable<Cliente[]>{
-    return this.http.get<ClientesResponse>('http://localhost:3000/api/cliente').pipe(
+    return this.http.get<ClientesResponse>('https://exam-commerce-back.herokuapp.com/api/cliente').pipe(
       map( resp => {
         return resp.clientes;
       })
@@ -21,7 +21,7 @@ export class ClientesService {
   }
 
   getClienteById(id: string): Observable<Cliente>{
-    return this.http.get<ClienteResponse>(`http://localhost:3000/api/cliente/${id}`).pipe(
+    return this.http.get<ClienteResponse>(`https://exam-commerce-back.herokuapp.com/api/cliente/${id}`).pipe(
       map(resp => {
         return resp.cliente;
       })
@@ -29,7 +29,7 @@ export class ClientesService {
   }
 
   getClienteByTarjeta(tarjeta: string): Observable<Cliente>{
-    return this.http.get<ClienteResponse>(`http://localhost:3000/api/cliente/tarjeta/${tarjeta}`).pipe(
+    return this.http.get<ClienteResponse>(`https://exam-commerce-back.herokuapp.com/api/cliente/tarjeta/${tarjeta}`).pipe(
       map( resp => {
         return resp.cliente;
       })
@@ -37,7 +37,7 @@ export class ClientesService {
   }
 
   crearCliente(cliente): Observable<Cliente>{
-    return this.http.post<ClienteResponse>('http://localhost:3000/api/cliente', cliente).pipe(
+    return this.http.post<ClienteResponse>('https://exam-commerce-back.herokuapp.com/api/cliente', cliente).pipe(
       map(resp => {
         return resp.cliente;
       })

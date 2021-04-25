@@ -18,19 +18,27 @@ export class ClienteFacturasComponent implements OnInit {
 
   public facturas: ClienteFactura[];
 
+  public cargandoCliente: boolean = false;
+
+  public cargandoFactura: boolean = false;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private facturasService: FacturasService,
     private clientesService: ClientesService) { }
 
   ngOnInit(): void {
+    this.cargandoCliente = true;
+    this.cargandoFactura = true;
     this.activatedRoute.params.subscribe(params => {
       this.clienteId = params.id;
       this.clientesService.getClienteById(this.clienteId).subscribe(resp => {
         this.cliente = resp;
+        this.cargandoCliente = false;
       });
       this.facturasService.getByClienteId(this.clienteId).subscribe(resp => {
         this.facturas = resp;
+        this.cargandoFactura = false;
       });
     });
 

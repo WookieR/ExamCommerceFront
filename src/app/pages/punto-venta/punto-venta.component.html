@@ -4,7 +4,8 @@
         <div class="col">
             <label for="exampleInputEmail1">Empleado</label>
             <input type="Text" #txtLegajo name="txtLegajo" class="form-control" id="txtLegajo" aria-describedby="emailHelp" placeholder="Introduzca su legajo">
-            <div class="card col" *ngIf="empleado">
+            <app-cargando-card *ngIf="cargandoEmpleado" [texto]="empleado"></app-cargando-card>
+            <div class="card col" *ngIf="empleado && !cargandoEmpleado">
                 <div class="card-body">
                   <h5 class="card-title">{{empleado.nombre}} {{empleado.apellido}}</h5>
                   <p class="card-text">{{empleado.dni}}</p>
@@ -15,7 +16,8 @@
         <div class="col">
             <label for="exampleInputPassword1">Cliente</label>
             <input type="text" #txtTarjeta name="txtTarjeta" id="txtTarjeta" class="form-control" id="exampleInputPassword1" placeholder="Introduzca el numero de tarjeta">
-            <div class="card col" *ngIf="cliente">
+            <app-cargando-card *ngIf="cargandoCliente" [texto]="'cliente'"></app-cargando-card>
+            <div class="card col" *ngIf="cliente && !cargandoCliente">
                 <div class="card-body">
                   <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
                   <p class="card-text">{{cliente.dni}}</p>
@@ -28,6 +30,7 @@
 <div class="form-group col-12">
     <label for="exampleInputPassword1">Producto</label>
     <input type="text" #txtCodigo name="txtCodigo" id="txtCodigo" class="form-control" id="exampleInputPassword1" placeholder="Introduzca el codigo del producto">
+    <app-cargando-card *ngIf="cargandoProducto" [texto]="'producto'"></app-cargando-card>
     <button class="btn btn-primary mt-3" (click)="cargarProducto(txtCodigo.value)">Confirmar</button>
 </div>
 <br>

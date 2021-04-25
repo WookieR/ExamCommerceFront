@@ -1,3 +1,4 @@
 <h1 class="display-5">Empleados</h1>
 
-<app-empleados-tabla [empleados]="empleados"></app-empleados-tabla>
+<app-cargando *ngIf="cargando"></app-cargando>
+<app-empleados-tabla *ngIf="!cargando" [empleados]="empleados"></app-empleados-tabla>

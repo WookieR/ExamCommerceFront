@@ -27,7 +27,7 @@
         <label for="exampleInputPassword1" class="form-label">Proveedor</label>
         <input type="text" class="form-control" formControlName="proveedor" id="exampleInputPassword1">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" [disabled]="cargando" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </div>

@@ -14,7 +14,7 @@ export class EmpleadosService {
   constructor(private http: HttpClient) { }
 
   getEmpleados(): Observable<Empleado[]>{
-    return this.http.get<EmpleadosResponse>('http://localhost:3000/api/empleado').pipe(
+    return this.http.get<EmpleadosResponse>('https://exam-commerce-back.herokuapp.com/api/empleado').pipe(
       map( (resp) => {
         return resp.empleados;
       })
@@ -22,7 +22,7 @@ export class EmpleadosService {
   }
 
   getEmpleadoByLegajo(legajo: string): Observable<Empleado>{
-    return this.http.get<EmpleadoResponse>(`http://localhost:3000/api/empleado/legajo/${legajo}`).pipe(
+    return this.http.get<EmpleadoResponse>(`https://exam-commerce-back.herokuapp.com/api/empleado/legajo/${legajo}`).pipe(
       map((resp) => {
         return resp.empleado;
       })
@@ -30,7 +30,7 @@ export class EmpleadosService {
   }
 
   crearEmpleado(nuevoEmpleado): Observable<Empleado>{
-    return this.http.post<EmpleadoResponse>(`http://localhost:3000/api/empleado`, nuevoEmpleado).pipe(
+    return this.http.post<EmpleadoResponse>(`https://exam-commerce-back.herokuapp.com/api/empleado`, nuevoEmpleado).pipe(
       map(resp => {
         return resp.empleado;
       })

@@ -7,6 +7,8 @@ import { EmpleadosFilaComponent } from './empleados/empleados-fila/empleados-fil
 import { ClientesTablaComponent } from './clientes/clientes-tabla/clientes-tabla.component';
 import { ProductosTablaComponent } from './productos/productos-tabla/productos-tabla.component';
 import { ClienteFacturasTablaComponent } from './clientes/cliente-facturas-tabla/cliente-facturas-tabla.component';
+import { CargandoComponent } from './cargando/cargando.component';
+import { CargandoCardComponent } from './cargando-card/cargando-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ClienteFacturasTablaComponent } from './clientes/cliente-facturas-tabla
     EmpleadosFilaComponent,
     ClientesTablaComponent,
     ProductosTablaComponent,
-    ClienteFacturasTablaComponent
+    ClienteFacturasTablaComponent,
+    CargandoComponent,
+    CargandoCardComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +30,9 @@ import { ClienteFacturasTablaComponent } from './clientes/cliente-facturas-tabla
     EmpleadosTablaComponent,
     ClientesTablaComponent,
     ProductosTablaComponent,
-    ClienteFacturasTablaComponent
+    ClienteFacturasTablaComponent,
+    CargandoComponent,
+    CargandoCardComponent
   ]
 })
 export class ComponentsModule { }

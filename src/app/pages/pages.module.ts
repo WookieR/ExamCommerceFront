@@ -19,8 +19,17 @@ import { ProductoAltaComponent } from './productos/producto-alta/producto-alta.c
 
 @NgModule({
   declarations: [
-    MainComponent, 
-    DashboardComponent, EmpleadoConsultaComponent, ClienteConsultaComponent, ProductoConsultaComponent, PuntoVentaComponent, ClienteFacturasComponent, FacturaDetalleComponent, EmpleadoAltaComponent, ClienteAltaComponent, ProductoAltaComponent
+    MainComponent,
+    DashboardComponent,
+    EmpleadoConsultaComponent,
+    ClienteConsultaComponent,
+    ProductoConsultaComponent,
+    PuntoVentaComponent,
+    ClienteFacturasComponent,
+    FacturaDetalleComponent,
+    EmpleadoAltaComponent,
+    ClienteAltaComponent,
+    ProductoAltaComponent
   ],
   imports: [
     CommonModule,

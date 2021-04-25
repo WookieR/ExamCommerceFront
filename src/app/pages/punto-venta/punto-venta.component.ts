@@ -25,6 +25,10 @@ export class PuntoVentaComponent implements OnInit {
 
   public total: number;
 
+  public cargandoEmpleado: boolean = false;
+  public cargandoCliente: boolean = false;
+  public cargandoProducto: boolean = false;
+
   constructor(
     private empleadosService: EmpleadosService,
     private clientesService: ClientesService,
@@ -52,12 +56,15 @@ export class PuntoVentaComponent implements OnInit {
     if(legajo.length < 1){
       return this.alertasService.alertaError('Debe introducir un legajo valido');
     }
+    this.cargandoEmpleado = true;
 
     this.empleadosService.getEmpleadoByLegajo(legajo).subscribe(resp => {
       this.empleado = resp;
       this.factura.empleado = this.empleado._id;
+      this.cargandoEmpleado = false;
     }, error => {
       this.alertasService.alertaError(error.error.message);
+      this.cargandoEmpleado = false;
     });
   }
 
@@ -65,12 +72,15 @@ export class PuntoVentaComponent implements OnInit {
     if(tarjeta.length < 1){
       return this.alertasService.alertaError('Debe introducir un numero de tarjeta valido');
     }
+    this.cargandoCliente = true;
 
     this.clientesService.getClienteByTarjeta(tarjeta).subscribe( resp => {
       this.cliente = resp;
       this.factura.cliente = this.cliente._id;
+      this.cargandoCliente = false;
     }, error => {
       this.alertasService.alertaError(error.error.message);
+      this.cargandoCliente = false;
     });
   }
 
@@ -78,6 +88,8 @@ export class PuntoVentaComponent implements OnInit {
     if(codigo.length < 1){
       return this.alertasService.alertaError('Debe introducir un codigo valido');
     }
+
+    this.cargandoProducto = true;
 
     let existe = false;
     this.productosService.getProductoByCodigo(codigo).subscribe(resp => {
@@ -92,8 +104,10 @@ export class PuntoVentaComponent implements OnInit {
         this.detalles.push(resp);
       }
       this.actualizarTotal();
+      this.cargandoProducto = false;
     }, error => {
       this.alertasService.alertaError(error.error.message);
+      this.cargandoProducto = false;
     });
   }
 

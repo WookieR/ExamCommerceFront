@@ -11,11 +11,15 @@ export class EmpleadoConsultaComponent implements OnInit {
 
   public empleados: Empleado[];
 
+  public cargando: boolean = false;
+
   constructor(private empleadosService: EmpleadosService) { }
 
   ngOnInit(): void {
+    this.cargando = true;
     this.empleadosService.getEmpleados().subscribe(resp => {
       this.empleados = resp;
+      this.cargando = false;
     });
   }
 

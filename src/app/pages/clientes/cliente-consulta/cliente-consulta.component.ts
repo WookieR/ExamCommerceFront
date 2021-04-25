@@ -9,13 +9,17 @@ import { ClientesService } from '../../../services/clientes.service';
 })
 export class ClienteConsultaComponent implements OnInit {
 
+  public cargando: boolean = false;
+
   public clientes: Cliente[];
 
   constructor(private clientesService: ClientesService) { }
 
   ngOnInit(): void {
+    this.cargando = true;
     this.clientesService.getClientes().subscribe(resp => {
       this.clientes = resp;
+      this.cargando = false;
     });
   }
 

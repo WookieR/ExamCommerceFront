@@ -1,3 +1,4 @@
-<h1 class="display-5">Facturas del Cliente: <small *ngIf="cliente">{{cliente.nombre}} {{cliente.apellido}}</small></h1>
+<h1 class="display-5">Facturas del Cliente: <small *ngIf="cargandoCliente">Cargando...</small><small *ngIf="cliente">{{cliente.nombre}} {{cliente.apellido}}</small></h1>
 
-<app-cliente-facturas-tabla [facturas]="facturas"></app-cliente-facturas-tabla>
+<app-cargando *ngIf="cargandoFactura"></app-cargando>
+<app-cliente-facturas-tabla *ngIf="!cargandoFactura" [facturas]="facturas"></app-cliente-facturas-tabla>

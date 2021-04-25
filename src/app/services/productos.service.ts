@@ -13,7 +13,7 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   getProducto(): Observable<Producto[]> {
-    return this.http.get<ProductosResponse>('http://localhost:3000/api/producto').pipe(
+    return this.http.get<ProductosResponse>('https://exam-commerce-back.herokuapp.com/api/producto').pipe(
       map(resp => {
         return resp.productos;
       })
@@ -21,7 +21,7 @@ export class ProductosService {
   }
 
   getProductoByCodigo(codigo: string): Observable<Detalle> {
-    return this.http.get<ProductoResponse>(`http://localhost:3000/api/producto/codigo/${codigo}`).pipe(
+    return this.http.get<ProductoResponse>(`https://exam-commerce-back.herokuapp.com/api/producto/codigo/${codigo}`).pipe(
       map(resp => {
         return { 
           producto: resp.producto._id,
@@ -34,7 +34,7 @@ export class ProductosService {
   }
 
   crearProducto(producto): Observable<Producto> {
-    return this.http.post<ProductoResponse>('http://localhost:3000/api/producto', producto).pipe(
+    return this.http.post<ProductoResponse>('https://exam-commerce-back.herokuapp.com/api/producto', producto).pipe(
       map(resp => {
         return resp.producto;
       })

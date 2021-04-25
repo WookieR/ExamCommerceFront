@@ -13,7 +13,7 @@ export class FacturasService {
   constructor(private http: HttpClient) { }
 
   getByClienteId(clienteId: string): Observable<ClienteFactura[]>{
-    return this.http.get<ClienteFacturasResponse>(`http://localhost:3000/api/factura/cliente/${clienteId}`).pipe(
+    return this.http.get<ClienteFacturasResponse>(`https://exam-commerce-back.herokuapp.com/api/factura/cliente/${clienteId}`).pipe(
       map( resp => {
         return resp.facturas;
       })
@@ -21,7 +21,7 @@ export class FacturasService {
   }
 
   nuevaVenta(factura: FacturaModelo): Observable<Factura>{
-    return this.http.post<FacturaResponse>(`http://localhost:3000/api/factura`, factura).pipe(
+    return this.http.post<FacturaResponse>(`https://exam-commerce-back.herokuapp.com/api/factura`, factura).pipe(
       map(resp => {
         return resp.factura;
       })

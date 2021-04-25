@@ -11,6 +11,6 @@ export class DetallesService {
   constructor(private http: HttpClient) { }
 
   getDetallesByFacturaId(facturaId: string): Observable<DetallesResponse>{
-    return this.http.get<DetallesResponse>(`http://localhost:3000/api/factura/${facturaId}`);
+    return this.http.get<DetallesResponse>(`https://exam-commerce-back.herokuapp.com/api/factura/${facturaId}`);
   }
 }

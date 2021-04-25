@@ -1,3 +1,4 @@
 <h1 class="display-5">Clientes</h1>
 
-<app-clientes-tabla [clientes]="clientes"></app-clientes-tabla>
+<app-cargando *ngIf="cargando"></app-cargando>
+<app-clientes-tabla *ngIf="!cargando" [clientes]="clientes"></app-clientes-tabla>
